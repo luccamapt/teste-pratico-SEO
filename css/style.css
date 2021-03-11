@@ -1,0 +1,650 @@
+/* definindo cores */
+:root {
+    --black: #000;
+    --white: #fff;
+    --gray: #4e4c4a;
+    --blue: #1cd4e9;
+    --yellow: #efe60b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+
+/* utilizado para containers com bg */
+.bg-img{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* cabecalho com menu e logo, disposto a frente de todo o site */
+header {
+    z-index: 1000;
+    color: var(--white);
+    position: fixed;
+    top: 0;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 0px 100px;
+    font-size: 15px;
+    transition: 0.7s;
+}
+
+/* classe adicionada ao header ao scrollar a janela */
+header.dark {
+    background-color: var(--gray);
+    color: var(--white);
+}
+
+header img {
+    width: 160px;
+    height: 40px;
+    margin: 0;
+}
+
+/* configuracoes gerais das sections */
+section {
+    /* propiedade limitada pelo Microsoft Edge */
+    scroll-behavior: smooth;
+}
+
+section a {
+    color: unset;
+    text-decoration: none;
+}
+
+/* configuracoes gerais do menu */
+.menu {
+    display: flex;
+}
+
+.menu button {
+    display: none;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+}
+
+.menu-list li {
+    display: inline-block;
+    margin-left: 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+
+/* comportamento dos itens do menu durante o hover */
+.menu-list li:hover {
+    color: var(--blue);
+}
+
+/* disposicao dos containers */
+.home-container,
+.content-container {
+    height: 100vh;
+    display: flex;
+}
+
+/* configuracoes especificas de containers */
+.home-container {
+    background-image: url("../Images/web/s1\ ft1.png");
+}
+
+.content-container {
+    width: 100%;
+    height: auto;
+    background-image: url("../Images/web/bg.png");
+}
+
+.contato-container {
+    background-color: var(--yellow);
+    height: fit-content;
+    display: flex;    
+    padding: 60px 0px;
+}
+
+/* propriedade de centralizacao da home */
+.center {
+    padding: 40px 200px;
+    text-align: center;
+}
+
+/* configuracoes gerais da home */
+.home {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.home .message span{
+    color: var(--yellow);
+}
+
+.home-title {
+    color: var(--white);
+    font-size: 6em;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    padding-top: 100px;
+    margin-bottom: 60px;
+}
+
+/* configuracao da disposicao e estilizacao de todo conteudo principal
+compreendido pelos topicos: "sobre", "servicos" e "diferenciais" */
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px 100px 100px 100px;
+}
+
+.content-title {
+    color: var(--black);
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5;
+    margin-top: 80px;
+}
+
+/* estilizacao dos cards utilizados nos topicos de conteudos */
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0px;
+    height: fit-content;
+    margin-top: 40px;   
+}
+
+/* propriedades do card referente ao topico "sobre" */
+.sobre-card {
+    background-color: var(--white);
+    box-shadow: 0 0 1em rgba(0,0,0,0.4);
+    max-width: 75%;
+    width: 100%;
+}
+
+/* customizacao geral do card que trata os conteudos do topico "servicos" */
+.servicos-card {
+    text-align: center;
+    margin-right: 30px;
+    width: 350px;
+    height: fit-content;
+    border-radius: 25px;
+}
+
+
+.servicos-card * {
+    padding: 0px 20px;
+}
+
+.servicos-card h3 {
+    color: var(--yellow);
+    margin-bottom: 20px;
+}
+
+.servicos-card p{
+    color: var(--white);
+    line-height: 20px;
+}
+
+/* estilizacao do card que contem informacoes do topico "diferenciais" */
+.diferenciais-card {
+    text-align: center;
+    margin-right: 30px;
+    width: 250px;
+    height: fit-content;
+    border-radius: 25px;
+}
+
+.diferenciais-card img {
+    margin-bottom: 20px;
+    width: 100px;
+    height: auto;
+}
+
+.diferenciais-card p {
+    color: var(--white);
+    line-height: 18px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/* customizacao dos corpos de texto, que sao diferentes de titulos e outras informacoes pequenas */
+.message {
+    color: var(--white);
+    font-size: 0.9em;
+    letter-spacing: 0.7px;
+    line-height: 30px;
+    margin-bottom: 60px;
+}
+
+.home-message {
+    max-width: 80%;
+    line-height: 30px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+.content-message {
+    color: var(--black);
+    line-height: 22px;
+    margin: 7px 25px;
+}
+
+/* estilizacao da area de contatos */
+.contatos {
+    background-color: #191919;
+    color: var(--white);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    height: fit-content;
+    padding: 0px 100px;
+}
+
+/* configuracoes do conteudo geral de contato */
+.geral {
+	width:100%;
+    max-width: 50%;
+	position:relative;
+    margin: 60px 0px;
+}
+
+.geral p,
+.geral i {
+    margin: 20px 0px;
+    font-size: 0.8em;
+    line-height: 25px;
+}
+
+/* propriedades do topo das informacoes de contato, 
+correspondido basicamente pelas redes sociais */
+.geral-top img {
+    width: 160px;
+    height: 40px;
+    margin-left: 0;
+}
+
+.geral-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* estilizacao dos icones de rede social */
+.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.social i{
+    font-size: 3em;
+    margin: 0px 20px;
+}
+
+/* comportamento geral da area de contatos em si,
+correspondido pelo e-mail e telefone */
+.contato {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+.contato *{
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.contato i{
+    font-size: 1.1em;
+    margin: 0px 5px;
+}
+
+/* estilizacoes especificas para o endereco */
+.endereco {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.endereco i{
+    font-size: 0.9em;
+    margin: 0px 5px;
+}
+
+.endereco p {
+    font-size: 0.6em;    
+}
+
+/* propriedades gerais do formulario de contato */
+.form-container {
+	max-width:500px;
+	width:100%;
+	margin: 60px 0px;
+	position:relative;
+}
+
+/* estilizacao do formulario de contato */
+.form-contato {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	background: #818181;
+    height: 100%;
+    min-height: 600px;
+	padding: 40px 40px;
+	margin: 0;
+}
+
+/* propriedades gerais de um campo */
+fieldset {
+	border: medium none;
+	min-width: 100%;
+	padding: 0;
+	width: 100%;
+}
+
+/* propriedades de compos especificos */
+.form-contato input[type="text"], 
+.form-contato input[type="email"], 
+.form-contato textarea {
+	width:100%;
+    height: 50px;
+	border:1px solid var(--white);
+	background:white;
+	margin:0 0 5px;
+	padding:10px;
+}
+
+.form-contato textarea {
+    max-width:100%;
+    height: 200px;
+    resize:none;
+}
+
+/* comportamento dos campos no hover e quando selecionados */
+.form-contato input[type="text"]:hover, 
+.form-contato input[type="email"]:hover, 
+.form-contato textarea:hover {
+	transition:border-color 0.3s ease-in-out;
+	border:1px solid var(--yellow);
+}
+
+
+.form-contato input:focus, 
+.form-contato textarea:focus {
+	outline:0;
+	border: 1px solid var(--blue);
+}
+
+/* estilizacao geral dos botoes */
+button {
+    border: none;
+    outline: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button.btn-primary {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: opacity 0.5s;
+}
+
+button.btn-primary.btn-form {
+    border-radius: unset;
+    padding: 10px;
+    width: 100%;
+}
+
+.btn-disabled {
+    pointer-events: none;
+}
+
+/* -- RESPONSIVIDADE -- */
+
+/* para referencias com largura menor ou igual a 1080px */
+@media (max-width: 1080px) {
+    header {
+        padding: 0px 40px;
+    }
+
+    header img{
+        margin: auto;
+    }
+
+    .home{
+        flex-direction: column;
+    }
+
+    .center {
+        width: 100%;
+        max-width: 100%;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.7em;
+    }
+    
+    .center * {
+        width: 95%;
+        padding-bottom: 35px;
+        text-align: center;
+    }
+
+    .home-title {
+        font-size: 10vmin;
+    }
+
+    .message {
+        font-size: 1.9vmin;
+    }
+
+    .content-container{
+        background-image: none;
+    }
+
+    .content {
+        width: 100%;
+        max-width: 100%;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.9em;
+    }
+    
+    .sobre * {
+        width: 95%;
+        max-width: 100%;
+    }
+
+    .cards {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .diferenciais-card img {
+        max-width: 30%;
+    }
+
+    button.btn-primary {
+        max-width: max-content;
+        margin-top: 100px;
+    }
+
+    button.btn-primary.btn-form {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 0;
+    }
+    
+    /* NAV MENU */
+    /* comportamentos do header e do menu de navegacao */
+    header {
+        z-index: 1000;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .menu button {
+        display: block;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background: transparent;
+        color: var(--white);
+        outline: none;
+        font-size: 1.7em;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .menu i{
+        font-size: 1.5em;
+    }
+
+    .menu i.bx-x,
+    .menu.opened i.bx-menu {
+        display: none;
+    }
+
+    .menu.opened i.bx-x,
+    .menu i.bx-menu {
+        display: block;
+        animation: enter 0.8s;
+    }
+    /* animacao de surgimento do botao de fechar o menu quando o ultimo se abre */
+    @keyframes enter {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .menu.opened i.bx-x {
+        animation: move 0.8s;
+        transform: translateX(600%);
+    }
+    /* animacao de movimento do botao de fechar o menu quando o ultimo se abre */
+    @keyframes move {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(600%);
+        }
+    }
+
+    /* estilizacao da "caixa" do menu lateral */
+    .menu-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 70%;
+        max-width: 350px;
+        height: 50%;
+        border-radius: 0 35px 35px 0;
+        background-color: rgba(64, 64, 64, 0.60) !important;
+        backdrop-filter: blur(10px) !important;
+        color: var(--white);
+        padding: 45px;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 60px;
+        transform: translateX(-100%);
+        transition: transform 0.5s;
+    }
+
+    .menu-list li {
+        font-size: 1.2em;
+        margin: 12px 0px;
+    }
+
+    .menu.opened .menu-list {
+        transform: translateX(0%);
+    }
+
+    .menu.opened button {
+        color: var(--white);
+    }
+}
+
+/* CASOS ESPECIAIS */
+/* alguns casos especiais de responsividade que contribuem para a estetica */
+@media (max-width: 1366px) {
+    .cards {
+        justify-content: center;    
+    }
+}
+
+@media (max-width: 1220px) {
+    .contatos {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        padding: 0;
+    }
+
+    .contatos .geral,
+    .contatos .form-container{
+        max-width: 100%;
+        margin: 40px 0 0 0;
+    }
+
+    .contatos .geral {
+        padding: 0 40px;
+    }
+}
